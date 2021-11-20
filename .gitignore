@@ -1,129 +1,74 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+from random import randint
 
-# C extensions
-*.so
+#масив с буквами 0-25 буквы 26-61 цыфры
+simbolsENG = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','3','4','5','6','7','8','9','0','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+simbolsSpecENG = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','3','4','5','6','7','8','9','0','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','!','@','#','$','%','^','&','*','(',')','+','_','=','№']
+#масив с русскими буквами и цыфрами 0-77
+simbolsRus = ['а','б','в','г','д','у','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я','0','1','2','3','4','5','6','7','8','9','0','А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я']
+simbolsSpecRus = ['а','б','в','г','д','у','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я','0','1','2','3','4','5','6','7','8','9','0','А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я','!','@','#','$','%','^','&','*','(',')','+','_','=','№']
+#массив смешиными буквами 0 - 139
+simbolsRusAndEng = ['а','б','в','г','д','у','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я','0','1','2','3','4','5','6','7','8','9','0','А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','3','4','5','6','7','8','9','0','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+simbolsSpecRusAndEng = ['а','б','в','г','д','у','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я','0','1','2','3','4','5','6','7','8','9','0','А','Б','В','Г','Д','Е','Ё','Ж','З','И','Й','К','Л','М','Н','О','П','Р','С','Т','У','Ф','Х','Ц','Ч','Ш','Щ','Ъ','Ы','Ь','Э','Ю','Я','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','3','4','5','6','7','8','9','0','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','!','@','#','$','%','^','&','*','(',')','+','_','=','№']
+#масив паролей
+passWord = []
+#Принимаем длину пароля
+typeLung = input("Введите язык: RUS ; ENG ; EaR ; - смешанный;Поставте вначале 's' что-бы использовать спецсимбволы").lower()
+rassLengh = input("Введите размер пароля: ")
+def newPasswordENG(lengh):
+    i = 0
+    while i <= int(lengh):
+        passWord.append(simbolsENG[randint(0,61)])
+        i += 1
+    compileList = ''.join(passWord)
+    print(compileList)
+def newPasswordRUS(lengh):
+    i = 0
+    while i <= int(lengh):
+        passWord.append(simbolsRus[randint(0,77)])
+        i += 1
+    compileList = ''.join(passWord)
+    print(compileList)
+def newPasswordRUSAndENG(lengh):
+    i = 0
+    while i <= int(lengh):
+        passWord.append(simbolsRusAndEng[randint(0,139)])
+        i += 1
+    compileList = ''.join(passWord)
+    print(compileList)
+def newPasswordSpecENG(lengh):
+    i = 0
+    while i <= int(lengh):
+        passWord.append(simbolsSpecENG[randint(0,75)])
+        i += 1
+    compileList = ''.join(passWord)
+    print(compileList)
+def newPasswordSpecRUS(lengh):
+    i = 0
+    while i <= int(lengh):
+        passWord.append(simbolsSpecRus[randint(0,91)])
+        i += 1
+    compileList = ''.join(passWord)
+    print(compileList)
+def newPasswordSpecRUSAndENG(lengh):
+    i = 0
+    while i <= int(lengh):
+        passWord.append(simbolsSpecRusAndEng[randint(0,153)])
+        i += 1
+    compileList = ''.join(passWord)
+    print(compileList)
+if typeLung == "rus":
+    newPasswordRUS(rassLengh)
+elif typeLung == "eng":
+    newPasswordENG(rassLengh)
+elif typeLung == "ear":
+    newPasswordRUSAndENG(rassLengh)
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
+elif typeLung == "srus":
+    newPasswordSpecRUS(rassLengh)
+elif typeLung == "seng":
+    newPasswordSpecENG(rassLengh)
+elif typeLung == "sear":
+    newPasswordSpecRUSAndENG(rassLengh)
+else:
+    print("Не известный язык!")
+input()
